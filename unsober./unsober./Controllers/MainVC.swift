@@ -14,12 +14,8 @@ class MainVC: UIViewController {
     
     // Outlets
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
     }
     
