@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B2AEC89322B2AFBD00BAB988 /* SegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AEC89222B2AFBD00BAB988 /* SegmentControl.swift */; };
+		B2C708AC22B4E0ED003A98CE /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C708AB22B4E0ED003A98CE /* CustomSegmentedControl.swift */; };
 		B2F38EDA22A91033006F3721 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F38ED922A91033006F3721 /* AppDelegate.swift */; };
 		B2F38EDC22A91033006F3721 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F38EDB22A91033006F3721 /* MainVC.swift */; };
 		B2F38EDF22A91033006F3721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F38EDD22A91033006F3721 /* Main.storyboard */; };
@@ -35,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B2AEC89222B2AFBD00BAB988 /* SegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControl.swift; sourceTree = "<group>"; };
+		B2C708AB22B4E0ED003A98CE /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		B2F38ED622A91033006F3721 /* unsober..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = unsober..app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F38ED922A91033006F3721 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2F38EDB22A91033006F3721 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -132,7 +132,6 @@
 		B2FDDB7722B2829600CB0C6E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B2AEC89222B2AFBD00BAB988 /* SegmentControl.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -148,6 +147,7 @@
 		B2FDDB7922B282CF00CB0C6E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B2C708AB22B4E0ED003A98CE /* CustomSegmentedControl.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,7 +285,7 @@
 			files = (
 				B2F38EDC22A91033006F3721 /* MainVC.swift in Sources */,
 				B2F38EDA22A91033006F3721 /* AppDelegate.swift in Sources */,
-				B2AEC89322B2AFBD00BAB988 /* SegmentControl.swift in Sources */,
+				B2C708AC22B4E0ED003A98CE /* CustomSegmentedControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

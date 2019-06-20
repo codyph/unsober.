@@ -28,6 +28,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xs3-ac-Ffc">
                                 <rect key="frame" x="55.5" y="113" width="264" height="60"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Fha-7v-pBn"/>
                                     <constraint firstAttribute="width" constant="264" id="aUF-9O-YAj"/>
@@ -40,34 +41,45 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edc0f197057591506585734856048ce0" translatesAutoresizingMaskIntoConstraints="NO" id="ojo-Os-YLa">
                                 <rect key="frame" x="16" y="198" width="343" height="420"/>
                             </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BRA-Nk-fyO" customClass="SegmentControl" customModule="unsober_" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="631" width="375" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="klk-yp-WdH"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Home"/>
-                                    <segment title="Larry"/>
-                                    <segment title="Stats"/>
-                                    <segment title="Settings"/>
-                                </segments>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVM-6i-Xlh" customClass="CustomSegmentedControl" customModule="unsober_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="626" width="375" height="41"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.082272046232876705" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="commaSeparatedButtonTitles" value="Home,Larry,Data,Settings"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectorColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectorTextColor">
+                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="segmentControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Nee-eV-39a"/>
+                                    <action selector="customSegmentedValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Asc-cv-irZ"/>
                                 </connections>
-                            </segmentedControl>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="BRA-Nk-fyO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="84e-WP-0GW"/>
+                            <constraint firstItem="tVM-6i-Xlh" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="280-xu-ORg"/>
                             <constraint firstItem="4xy-Hz-bxU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FzL-Ji-voq"/>
-                            <constraint firstItem="BRA-Nk-fyO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IE7-IC-85n"/>
+                            <constraint firstItem="tVM-6i-Xlh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="J3r-pW-aV2"/>
                             <constraint firstItem="ojo-Os-YLa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="a9L-sa-h5P"/>
-                            <constraint firstItem="BRA-Nk-fyO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="dBt-rv-iQR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ojo-Os-YLa" secondAttribute="trailing" constant="16" id="l92-Su-bYy"/>
                             <constraint firstItem="Xs3-ac-Ffc" firstAttribute="top" secondItem="4xy-Hz-bxU" secondAttribute="bottom" constant="14" id="oQe-Ay-DXa"/>
                             <constraint firstItem="Xs3-ac-Ffc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="psX-ff-v7O"/>
                             <constraint firstItem="4xy-Hz-bxU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="qdb-ty-brP"/>
                             <constraint firstItem="ojo-Os-YLa" firstAttribute="top" secondItem="Xs3-ac-Ffc" secondAttribute="bottom" constant="25" id="sfr-q0-hK8"/>
+                            <constraint firstItem="tVM-6i-Xlh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="trW-ZA-oXJ"/>
+                            <constraint firstItem="tVM-6i-Xlh" firstAttribute="top" secondItem="ojo-Os-YLa" secondAttribute="bottom" constant="8" id="w27-IP-eoP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

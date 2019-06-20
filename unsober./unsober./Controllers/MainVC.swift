@@ -23,12 +23,10 @@ class MainVC: UIViewController {
         
     }
     
-    @IBAction func segmentControlValueChanged(_ sender: SegmentControl) {
-        sender.changeSelectedIndex(to: sender.selectedSegmentIndex)
+    @IBAction func customSegmentedValueChanged(_ sender: CustomSegmentedControl) {
+        
+        
     }
-    
-    
-    
     
     
 }
