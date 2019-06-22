@@ -18,44 +18,27 @@ class CustomSegmentedControl: UIControl {
     
     @IBInspectable
     var borderWidth: CGFloat = 0 {
-        didSet {
-            layer.borderWidth = borderWidth
-        }
+        didSet { layer.borderWidth = borderWidth }
     }
-    
     @IBInspectable
     var borderColor: UIColor = UIColor.clear {
-        didSet {
-            layer.borderColor = borderColor.cgColor
-        }
+        didSet { layer.borderColor = borderColor.cgColor }
     }
-
     @IBInspectable
     var commaSeparatedButtonTitles: String = "" {
-        didSet {
-            updateView()
-        }
+        didSet { updateView() }
     }
-    
     @IBInspectable
     var textColor: UIColor = .black {
-        didSet {
-            updateView()
-        }
+        didSet { updateView() }
     }
-    
     @IBInspectable
     var selectorColor: UIColor = .lightGray {
-        didSet {
-            updateView()
-        }
+        didSet { updateView() }
     }
-    
     @IBInspectable
     var selectorTextColor: UIColor = .darkGray {
-        didSet {
-            updateView()
-        }
+        didSet { updateView() }
     }
     
     func updateView() {
@@ -89,8 +72,6 @@ class CustomSegmentedControl: UIControl {
         sv.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         sv.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         sv.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        
-        
     }
     
     @objc func buttonTapped(button: UIButton) {
@@ -103,14 +84,10 @@ class CustomSegmentedControl: UIControl {
                 UIView.animate(withDuration: 0.3, animations: {
                     self.selector.frame.origin.x = selectorStartPosition
                 })
-                
-                
                 btn.setTitleColor(selectorTextColor, for: .normal)
             }
         }
-        
         sendActions(for: .valueChanged)
     }
-    
 
 }
