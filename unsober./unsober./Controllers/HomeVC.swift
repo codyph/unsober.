@@ -10,21 +10,23 @@ import UIKit
 
 class HomeVC: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    // Variables
+    var larryImages: [UIImage?] = [
+        UIImage(named: "larry1.png"),
+        UIImage(named: "larry2.png"),
+        UIImage(named: "larry3.jng"),
+        UIImage(named: "larry4.png"),
+        UIImage(named: "larry5.jpg"),
+        UIImage(named: "larry6.jpg")
+    ]
+    
+    // Outlets
+    @IBOutlet weak var larryImgView: UIImageView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let randomInt = Int.random(in: 0...4)
+        larryImgView.image = larryImages[randomInt]!
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
