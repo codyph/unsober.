@@ -1,5 +1,5 @@
 //
-//  DataVC.swift
+//  LiveLarryVC.swift
 //  unsober.
 //
 //  Created by Cody Philipp on 23/6/19.
@@ -7,16 +7,14 @@
 //
 
 import UIKit
-//import Charts
 
-class DataVC: UIViewController {
+class LiveLarryVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
     
 
     /*

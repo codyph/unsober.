@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B255DEF322BF592400E1F45D /* LiveDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255DEF222BF592400E1F45D /* LiveDataVC.swift */; };
+		B255DEF522BF593100E1F45D /* LiveLarryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255DEF422BF593100E1F45D /* LiveLarryVC.swift */; };
+		B255DEF722BF594200E1F45D /* LiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255DEF622BF594200E1F45D /* LiveVC.swift */; };
 		B282740C22BE8B3600DBB4D3 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282740B22BE8B3600DBB4D3 /* MainVC.swift */; };
 		B282740E22BE8B4900DBB4D3 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282740D22BE8B4900DBB4D3 /* HomeVC.swift */; };
 		B282741022BE8B5400DBB4D3 /* LarryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282740F22BE8B5400DBB4D3 /* LarryVC.swift */; };
 		B282741222BE8B5E00DBB4D3 /* DataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282741122BE8B5E00DBB4D3 /* DataVC.swift */; };
 		B282741422BE8B6500DBB4D3 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282741322BE8B6500DBB4D3 /* SettingsVC.swift */; };
-		B2895C2322BEAF0600EB2F0F /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2895C1E22BEAE1B00EB2F0F /* Charts.framework */; };
-		B2895C2522BEAF0600EB2F0F /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B2895C1E22BEAE1B00EB2F0F /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B28BA6F722BF97D500B5D3BC /* LivePagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28BA6F622BF97D500B5D3BC /* LivePagesVC.swift */; };
 		B2C708AC22B4E0ED003A98CE /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C708AB22B4E0ED003A98CE /* CustomSegmentedControl.swift */; };
 		B2F38EDA22A91033006F3721 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F38ED922A91033006F3721 /* AppDelegate.swift */; };
 		B2F38EDF22A91033006F3721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F38EDD22A91033006F3721 /* Main.storyboard */; };
@@ -24,27 +26,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B2895C1D22BEAE1B00EB2F0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B2895C1822BEAE1B00EB2F0F /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
-			remoteInfo = Charts;
-		};
-		B2895C1F22BEAE1B00EB2F0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B2895C1822BEAE1B00EB2F0F /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
-			remoteInfo = ChartsTests;
-		};
-		B2895C2622BEAF0600EB2F0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B2895C1822BEAE1B00EB2F0F /* Charts.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A58A4ED274A941CA248EA921;
-			remoteInfo = Charts;
-		};
 		B2F38EEB22A91034006F3721 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B2F38ECE22A91033006F3721 /* Project object */;
@@ -68,7 +49,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B2895C2522BEAF0600EB2F0F /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,12 +56,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B255DEF222BF592400E1F45D /* LiveDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveDataVC.swift; sourceTree = "<group>"; };
+		B255DEF422BF593100E1F45D /* LiveLarryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveLarryVC.swift; sourceTree = "<group>"; };
+		B255DEF622BF594200E1F45D /* LiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveVC.swift; sourceTree = "<group>"; };
 		B282740B22BE8B3600DBB4D3 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		B282740D22BE8B4900DBB4D3 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		B282740F22BE8B5400DBB4D3 /* LarryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LarryVC.swift; sourceTree = "<group>"; };
 		B282741122BE8B5E00DBB4D3 /* DataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataVC.swift; sourceTree = "<group>"; };
 		B282741322BE8B6500DBB4D3 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
-		B2895C1822BEAE1B00EB2F0F /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
+		B28BA6F622BF97D500B5D3BC /* LivePagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePagesVC.swift; sourceTree = "<group>"; };
 		B2C708AB22B4E0ED003A98CE /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		B2F38ED622A91033006F3721 /* unsober..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = unsober..app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F38ED922A91033006F3721 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,7 +85,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2895C2322BEAF0600EB2F0F /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,15 +105,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B2895C1922BEAE1B00EB2F0F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B2895C1E22BEAE1B00EB2F0F /* Charts.framework */,
-				B2895C2022BEAE1B00EB2F0F /* ChartsTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		B2F38ECD22A91033006F3721 = {
 			isa = PBXGroup;
 			children = (
@@ -155,7 +128,6 @@
 		B2F38ED822A91033006F3721 /* unsober. */ = {
 			isa = PBXGroup;
 			children = (
-				B2895C1822BEAE1B00EB2F0F /* Charts.xcodeproj */,
 				B2FDDB7922B282CF00CB0C6E /* Views */,
 				B2FDDB7822B282B600CB0C6E /* Controllers */,
 				B2FDDB7722B2829600CB0C6E /* Models */,
@@ -201,6 +173,10 @@
 				B282740F22BE8B5400DBB4D3 /* LarryVC.swift */,
 				B282741122BE8B5E00DBB4D3 /* DataVC.swift */,
 				B282741322BE8B6500DBB4D3 /* SettingsVC.swift */,
+				B255DEF222BF592400E1F45D /* LiveDataVC.swift */,
+				B255DEF422BF593100E1F45D /* LiveLarryVC.swift */,
+				B255DEF622BF594200E1F45D /* LiveVC.swift */,
+				B28BA6F622BF97D500B5D3BC /* LivePagesVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -228,7 +204,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				B2895C2722BEAF0600EB2F0F /* PBXTargetDependency */,
 			);
 			name = unsober.;
 			productName = unsober.;
@@ -305,12 +280,6 @@
 			mainGroup = B2F38ECD22A91033006F3721;
 			productRefGroup = B2F38ED722A91033006F3721 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = B2895C1922BEAE1B00EB2F0F /* Products */;
-					ProjectRef = B2895C1822BEAE1B00EB2F0F /* Charts.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				B2F38ED522A91033006F3721 /* unsober. */,
@@ -319,23 +288,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		B2895C1E22BEAE1B00EB2F0F /* Charts.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Charts.framework;
-			remoteRef = B2895C1D22BEAE1B00EB2F0F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B2895C2022BEAE1B00EB2F0F /* ChartsTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ChartsTests.xctest;
-			remoteRef = B2895C1F22BEAE1B00EB2F0F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B2F38ED422A91033006F3721 /* Resources */ = {
@@ -369,11 +321,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B28BA6F722BF97D500B5D3BC /* LivePagesVC.swift in Sources */,
 				B282741222BE8B5E00DBB4D3 /* DataVC.swift in Sources */,
 				B2F38EDA22A91033006F3721 /* AppDelegate.swift in Sources */,
 				B282741022BE8B5400DBB4D3 /* LarryVC.swift in Sources */,
 				B282740E22BE8B4900DBB4D3 /* HomeVC.swift in Sources */,
 				B282740C22BE8B3600DBB4D3 /* MainVC.swift in Sources */,
+				B255DEF522BF593100E1F45D /* LiveLarryVC.swift in Sources */,
+				B255DEF722BF594200E1F45D /* LiveVC.swift in Sources */,
+				B255DEF322BF592400E1F45D /* LiveDataVC.swift in Sources */,
 				B282741422BE8B6500DBB4D3 /* SettingsVC.swift in Sources */,
 				B2C708AC22B4E0ED003A98CE /* CustomSegmentedControl.swift in Sources */,
 			);
@@ -398,11 +354,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B2895C2722BEAF0600EB2F0F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Charts;
-			targetProxy = B2895C2622BEAF0600EB2F0F /* PBXContainerItemProxy */;
-		};
 		B2F38EEC22A91034006F3721 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B2F38ED522A91033006F3721 /* unsober. */;
