@@ -122,7 +122,6 @@
                                                 <state key="normal" title="Button" image="endSession_Icon"/>
                                                 <connections>
                                                     <action selector="endSessionBtnTapped:" destination="34w-bd-E5I" eventType="touchUpInside" id="qgP-7f-hAn"/>
-                                                    <segue destination="eOo-wP-K4F" kind="show" id="f8Q-g8-hiD"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -135,13 +134,65 @@
                                             <constraint firstAttribute="height" constant="150" id="t6t-jP-Gi3"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LIVE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCe-1T-7xk">
-                                        <rect key="frame" x="98" y="120" width="179" height="123"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GYA-vq-pnQ">
+                                        <rect key="frame" x="29" y="56" width="321" height="265"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="90"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your BAC:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h14-9X-IdM">
+                                                <rect key="frame" x="90" y="18" width="140" height="41"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.04" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mva-sm-J7w">
+                                                <rect key="frame" x="40" y="73" width="240" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="50"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Until Sober:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7r-D1-NrK">
+                                                <rect key="frame" x="81" y="155" width="159" height="28"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="2 hours" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="91B-wk-iip">
+                                                <rect key="frame" x="8" y="197" width="305" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="0.35455907534246578" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxq-hu-8FG">
+                                        <rect key="frame" x="46" y="360" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="addButton_Icon"/>
+                                        <connections>
+                                            <action selector="greenAddBtnTappedTest:" destination="34w-bd-E5I" eventType="touchUpInside" id="aC6-Ol-68y"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRc-vY-tB5">
+                                        <rect key="frame" x="139" y="475" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="addButton_Icon"/>
+                                        <connections>
+                                            <action selector="greenAddBtnTapped3:" destination="34w-bd-E5I" eventType="touchUpInside" id="RTd-XI-SfA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdk-4w-Hts">
+                                        <rect key="frame" x="238" y="360" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="addButton_Icon"/>
+                                        <connections>
+                                            <action selector="greenAddBtnTapped2:" destination="34w-bd-E5I" eventType="touchUpInside" id="jER-jr-OmV"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -166,11 +217,14 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="bacTextField" destination="Mva-sm-J7w" id="mYt-34-paw"/>
+                        <outlet property="bacView" destination="GYA-vq-pnQ" id="Pg8-Dl-QiM"/>
                         <outlet property="childView" destination="Kop-K1-xUL" id="Twk-fl-1VA"/>
                         <outlet property="endSessionBotConstraint" destination="DWm-It-tWg" id="VHu-lf-cYD"/>
                         <outlet property="endSessionViewHeight" destination="t6t-jP-Gi3" id="JlE-la-BbT"/>
                         <outlet property="fullView" destination="1Zr-8y-a7x" id="yZW-Wd-aer"/>
                         <outlet property="fullViewBotConstraint" destination="G68-jI-6ys" id="Mos-Sm-4O8"/>
+                        <outlet property="timeTextField" destination="91B-wk-iip" id="L1i-lE-Yon"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eR2-4U-zNc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -195,10 +249,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LARRY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXz-n1-VFS">
-                                <rect key="frame" x="52" y="125" width="271" height="123"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="L A R R Y" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXz-n1-VFS">
+                                <rect key="frame" x="47" y="20" width="281" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="90"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="57"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -210,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mP-sh-46P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-854" y="2329"/>
+            <point key="canvasLocation" x="-855.20000000000005" y="2328.4857571214393"/>
         </scene>
         <!--LarryVC-->
         <scene sceneID="oSE-aG-9mi">
@@ -345,6 +399,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addButton_Icon" width="1024" height="1024"/>
         <image name="endSession_Icon" width="1024" height="1024"/>
     </resources>
 </document>
