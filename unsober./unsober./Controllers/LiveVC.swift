@@ -13,10 +13,10 @@ class LiveVC: UIViewController {
     // Variables
     var swipeMoved: Int = 0
     
-    var bacNumber: Double = 0.00
-    var bacNumberArrayTest = [0.021,0.0157,0.01039,0.031,0.0034,0.0057] //Tester
+    var standardDrinksConsumed: Double = 0.0
+    var bloodAlcoholContent: Double = 0.00
     
-    // ** NEED TO CODE THAT YOU CAN ONLY SWIPE UPWARDS AND DOWNWARDS ONCE
+    var bacNumberArrayTest = [0.021,0.0157,0.01039,0.031,0.0034,0.0057] //Tester
     
     // Outlets
     @IBOutlet weak var fullView: UIView!
@@ -68,21 +68,53 @@ class LiveVC: UIViewController {
     
     
     func soberCheck() {
-        if bacNumber > 0.00 {
-            bacTextField.text = String(format: "%.4f", bacNumber)
-            timeTextField.text = calculateTimeUntilSober(bacNum: bacNumber)
+        if bloodAlcoholContent > 0.00 {
+            bacTextField.text = String(format: "%.4f", bloodAlcoholContent)
+            timeTextField.text = calculateTimeUntilSober(bacNum: bloodAlcoholContent)
         } else {
             bacTextField.text = "You're Sober!" // Should I include a gallery of "sayings" that could be put here? As in, every time you visit the page, there's a different greeting //
             timeTextField.text = "Time to start drinking?" // Maybe also include above idea here too???
         }
     }
     
-    func calculateBac(){
-        /*
-         eBAC = (c/2 - GC/weight) - (Beta*t)
-        */
+    @IBAction func unwindFromAddDrinkPopUpVC(_ sender: UIStoryboardSegue) {
+        if sender.source is AddDrinkPopUpVC {
+            if let addDrinkPopupVC = sender.source as? AddDrinkPopUpVC {
+                standardDrinksConsumed += addDrinkPopupVC.standardDrinks
+            }
+        }
+        print(standardDrinksConsumed)
     }
     
+    
+    
+    func calculateBAC() {
+        /*
+         0.806 = body water in blood constant (80.6%)
+         SD = standard drinks
+         1.2 = public health conversion constand
+         BW = body water const ->   males = 0.58
+                                    females = 0.49
+         WT = body weight
+         MR = metabolism const ->   males = 0.015
+                                    females = 0.017
+         DP = drinking period
+         
+         equation:
+         
+         eBAC = ((0.806 * SD * 1.2) / (BW * WT)) - MR * DP
+         */
+        
+    }
+    
+    func runTimer(){
+        //timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(), userInfo: nil, repeats: true)
+    }
+    
+    
+    
+    
+    // FUNC JUST TO DISPLAY DATA AND SHIT FOR TESTING
     func calculateTimeUntilSober(bacNum: Double) -> String {
         var timeStatement = [String]()
         
@@ -113,15 +145,11 @@ class LiveVC: UIViewController {
     
     
     @IBAction func greenAddBtnTappedTest(_ sender: Any) {
-        bacNumber += bacNumberArrayTest.max()!
+        bloodAlcoholContent += bacNumberArrayTest.max()!
         soberCheck()
     }
     @IBAction func greenAddBtnTapped2(_ sender: Any) {
-        bacNumber += bacNumberArrayTest.min()!
-        soberCheck()
-    }
-    @IBAction func greenAddBtnTapped3(_ sender: Any) {
-        bacNumber += bacNumberArrayTest.max()! - 3*bacNumberArrayTest.min()!
+        bloodAlcoholContent += bacNumberArrayTest.min()!
         soberCheck()
     }
     
