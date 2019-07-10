@@ -132,6 +132,16 @@ class LiveVC: UIViewController {
         // DECIDE HOW WE WANT TO DISPLAY TIME
     }
     
+    /*
+     QUICK CHECKLIST:
+     FIX KEYBOARD WHEN TYPING IN ADDDRINKPOPUPVC
+     FIX PRESSING ADD DRINK WITH NO DRINKS INSIDE AND IT STARTS TIMER
+     MAKE TIMER CONSTRAINTS
+     IF BAC GOES <= 0 -> GET TEXT FIELDS READY (SOBERCHECK) AND RESET TIMER?
+     HOW DO WE GET DATA FROM ALL OF THIS
+     WILL I NEED TO CHANGE TIME TO REAL TIME FOR CHARTS?
+    */
+    
     @IBAction func greenAddBtnTappedTest(_ sender: Any) {
         standardDrinksConsumed += 1
         updateValues()
