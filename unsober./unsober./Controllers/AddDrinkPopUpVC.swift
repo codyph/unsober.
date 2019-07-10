@@ -12,6 +12,7 @@ class AddDrinkPopUpVC: UIViewController {
 
     // Variables
     var standardDrinks: Double = 0.0
+    var isStandardDrinksUsed: Bool = false
     
     // Outlets
     @IBOutlet weak var popUpView: UIView!
@@ -33,6 +34,7 @@ class AddDrinkPopUpVC: UIViewController {
         if let drnkStandard = Double(drinkStandardTxtField.text!) {
             if drnkStandard >= 0 {
                 standardDrinks = drnkStandard
+                isStandardDrinksUsed = true
             }
         } else {
             print("Error in Standard Drinks")
@@ -40,7 +42,7 @@ class AddDrinkPopUpVC: UIViewController {
         
         if let drnkSize = Double(drinkSizeTxtField.text!) {
             if let drnkStrength = Double(drinkStrengthTxtField.text!) {
-                if drnkSize >= 0 && drnkStrength >= 0 && drnkStrength <= 100 {
+                if drnkSize >= 0 && drnkStrength >= 0 && drnkStrength <= 100 && !isStandardDrinksUsed {
                     standardDrinks = calculateStandardDrinks(drinkSize: drnkSize, drinkStength: drnkStrength, countryStandard: 10.0)
                     
                 } else {
@@ -53,10 +55,6 @@ class AddDrinkPopUpVC: UIViewController {
             print("Error with Drink Size")
         }
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let vc = segue.destination as! LiveVC
-//    }
     
     func calculateStandardDrinks(drinkSize: Double, drinkStength: Double, countryStandard: Double) -> Double {
         /*

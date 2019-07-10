@@ -16,7 +16,15 @@ class LiveVC: UIViewController {
     var standardDrinksConsumed: Double = 0.0
     var bloodAlcoholContent: Double = 0.00
     
-    var bacNumberArrayTest = [0.021,0.0157,0.01039,0.031,0.0034,0.0057] //Tester
+    var timer = Timer()
+    var time: Int = 0
+    var isTiming: Bool = false
+    var timeUntilSober: Double = 0.0 // in Hours
+    
+    var bodyWeightInkG: Double = 65 // test
+    //FIGURE OUT A BETTER STORAGE FOR THIS INFO -> BIOMETRICS PAGE ACCESS MAYBE
+    var bodyWaterGender = ["male" : 0.58, "female" : 0.49]
+    var metabolismGender = ["male" : 0.015, "female" : 0.017]
     
     // Outlets
     @IBOutlet weak var fullView: UIView!
@@ -36,10 +44,9 @@ class LiveVC: UIViewController {
         bacView.layer.cornerRadius = 20
         fullViewBotConstraint.constant += endSessionViewHeight.constant
         endSessionBotConstraint.constant = -endSessionViewHeight.constant
-        
-        soberCheck()
+        bacTextField.text = "You're Sober!"
+        timeTextField.text = "Time to Drink!"
     }
-    
     
     @IBAction func didSwipe(_ sender: UISwipeGestureRecognizer) {
         let duration = 0.4
@@ -63,94 +70,75 @@ class LiveVC: UIViewController {
     }
     
     @IBAction func endSessionBtnTapped(_ sender: Any) {
+        stopTimer()
         dismiss(animated: true, completion: nil)
-    }
-    
-    
-    func soberCheck() {
-        if bloodAlcoholContent > 0.00 {
-            bacTextField.text = String(format: "%.4f", bloodAlcoholContent)
-            timeTextField.text = calculateTimeUntilSober(bacNum: bloodAlcoholContent)
-        } else {
-            bacTextField.text = "You're Sober!" // Should I include a gallery of "sayings" that could be put here? As in, every time you visit the page, there's a different greeting //
-            timeTextField.text = "Time to start drinking?" // Maybe also include above idea here too???
-        }
     }
     
     @IBAction func unwindFromAddDrinkPopUpVC(_ sender: UIStoryboardSegue) {
         if sender.source is AddDrinkPopUpVC {
             if let addDrinkPopupVC = sender.source as? AddDrinkPopUpVC {
-                standardDrinksConsumed += addDrinkPopupVC.standardDrinks
+                    standardDrinksConsumed += addDrinkPopupVC.standardDrinks
+                    updateValues()
             }
         }
-        print(standardDrinksConsumed)
     }
     
-    
-    
-    func calculateBAC() {
-        /*
-         0.806 = body water in blood constant (80.6%)
-         SD = standard drinks
-         1.2 = public health conversion constand
-         BW = body water const ->   males = 0.58
-                                    females = 0.49
-         WT = body weight
-         MR = metabolism const ->   males = 0.015
-                                    females = 0.017
-         DP = drinking period
-         
-         equation:
-         
-         eBAC = ((0.806 * SD * 1.2) / (BW * WT)) - MR * DP
-         */
-        
-    }
-    
-    func runTimer(){
-        //timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(), userInfo: nil, repeats: true)
-    }
-    
-    
-    
-    
-    // FUNC JUST TO DISPLAY DATA AND SHIT FOR TESTING
-    func calculateTimeUntilSober(bacNum: Double) -> String {
-        var timeStatement = [String]()
-        
-        let timeTest = bacNum*100
-        let timeHour = String(format: "%.0f", timeTest)
-        
-        let timeMinuteDecimal = timeTest - floor(timeTest)
-        let timeMinuteN = timeMinuteDecimal*60
-        let timeMinute = String(format: "%.0f", timeMinuteN)
-        
-        let timeSecondDecimal = timeMinuteN - floor(timeMinuteN)
-        let timeSecondN = timeSecondDecimal*60
-        let timeSecond = String(format: "%.0f", timeSecondN)
-        
-        if timeHour != "0" {
-            timeStatement.append(timeHour+" hours")
+    func updateValues() {
+        if isTiming {
+        } else {
+            startTimer()
+            isTiming = true
         }
-        if timeMinute != "0" {
-            timeStatement.append(timeMinute+" mins")
-        }
-        if timeSecond != "0" {
-            timeStatement.append(timeSecond+" secs")
-        }
-        
-        return timeStatement.joined(separator: ", ")
+    }
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {_ in self.codeToTime()})
+    }
+    
+    func stopTimer(){
+        timer.invalidate()
+        isTiming = false
+        time = 0
+    }
+    
+    func codeToTime() {
+        time += 1
+        calculateBloodAlcoholContent()
+        calculateTimeUntilSober()
+        updateTextViews()
+    }
+    
+    func calculateBloodAlcoholContent(){
+        let bloodAlcoholContentZero = (0.806*standardDrinksConsumed*1.2)/(bodyWeightInkG*bodyWaterGender["male"]!)
+        let MetabolismTime = metabolismGender["male"]!*(Double(time)/3600)
+        bloodAlcoholContent = (bloodAlcoholContentZero - MetabolismTime)
+    }
+    
+    func calculateTimeUntilSober(){
+        timeUntilSober = bloodAlcoholContent/(metabolismGender["male"]!)
     }
     
     
+    func updateTextViews(){
+        let timeInSeconds = Int(timeUntilSober * 3600)
+        let hours = timeInSeconds / 3600
+        let minutes = (timeInSeconds % 3600) / 60
+        let seconds = timeInSeconds % 60
+        
+        bacTextField.text = String(format: "%0.4f", bloodAlcoholContent)
+        timeTextField.text = String("\(hours) hours, \(minutes) minutes, \(seconds) seconds")
+        //timeTextField.text = String(format: "%i:%02i:%02i", hours, minutes, seconds)
+        
+        // DECIDE HOW WE WANT TO DISPLAY TIME
+    }
     
     @IBAction func greenAddBtnTappedTest(_ sender: Any) {
-        bloodAlcoholContent += bacNumberArrayTest.max()!
-        soberCheck()
+        standardDrinksConsumed += 1
+        updateValues()
     }
     @IBAction func greenAddBtnTapped2(_ sender: Any) {
-        bloodAlcoholContent += bacNumberArrayTest.min()!
-        soberCheck()
+        standardDrinksConsumed += 2
+        updateValues()
     }
     
     
